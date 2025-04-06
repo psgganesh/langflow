@@ -36,6 +36,8 @@ import StoreApiKeyPage from "./pages/SettingsPage/pages/StoreApiKeyPage";
 import StorePage from "./pages/StorePage";
 import ViewPage from "./pages/ViewPage";
 
+import ExperimentalPage from "./pages/SettingsPage/pages/ExperimentalPage";
+
 const AdminPage = lazy(() => import("./pages/AdminPage"));
 const LoginAdminPage = lazy(() => import("./pages/AdminPage/LoginPage"));
 const DeleteAccountPage = lazy(() => import("./pages/DeleteAccountPage"));
@@ -132,6 +134,7 @@ const router = createBrowserRouter(
                   <Route path="shortcuts" element={<ShortcutsPage />} />
                   <Route path="messages" element={<MessagesPage />} />
                   <Route path="store" element={<StoreApiKeyPage />} />
+                  <Route path="experimental" element={<ExperimentalPage />} />
                 </Route>
                 <Route
                   path="store"

@@ -3,6 +3,7 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import {
   ENABLE_DATASTAX_LANGFLOW,
   ENABLE_PROFILE_ICONS,
+  ENABLE_AMAZON_SETTINGS_CUSTOMIZATION
 } from "@/customization/feature-flags";
 import useAuthStore from "@/stores/authStore";
 import { useStoreStore } from "@/stores/storeStore";
@@ -95,6 +96,19 @@ export default function SettingsPage(): JSX.Element {
     ];
 
     sidebarNavItems.splice(2, 0, ...langflowItems);
+  }
+
+  if (ENABLE_AMAZON_SETTINGS_CUSTOMIZATION) {
+    sidebarNavItems.push({
+      title: "Experimental",
+      href: "/settings/experimental",
+      icon: (
+        <ForwardedIconComponent
+          name="FlaskConical"
+          className="w-4 flex-shrink-0 justify-start stroke-[1.5]"
+        />
+      ),
+    });
   }
 
   return (
